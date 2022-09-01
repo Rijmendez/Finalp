@@ -16,11 +16,12 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from imprenta1 import views
-
+from imprenta1.views import *
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path("",views.Menu),
-    path("consulta/", views.consulta, name="consulta"),
-    path("producto/", views.producto, name="producto"),
-    path("Factura/", views.Factura, name="Factura"),
-]
+    path('',Index.as_view(),name='index'),
+    path('formulario',Formulario1.as_view(),name='formulario'),
+    path('lista',ListaF.as_view(),name='lista'),
+    path('consulta/<str:pk>/',ModificarF.as_view(),name="consulta"),
+    path('eliminar/<str:pk>/', DeleteR.as_view(), name="eliminar"),
+    ]
