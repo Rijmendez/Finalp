@@ -19,9 +19,9 @@ function calculo(){
 	if(cantidad1.value.length==0 || precio1.value.length==0){
 	validar();
 	}else{
-		document.getElementById("i5").value=subtotal;
-		document.getElementById("i6").value=iva;
-		document.getElementById("i7").value=totalpagar;
+		document.getElementById("precio").value=precio;
+		document.getElementById("cantidad").value=cantidad;
+		document.getElementById("totalapagar").value=totalpagar;
 	}
 	}
 function validar(){

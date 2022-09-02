@@ -24,5 +24,7 @@ urlpatterns = [
     path('lista',ListaF.as_view(),name='lista'),
     path('consultas/<str:pk>/',ModificarF.as_view(),name="consultas"),
     path('eliminar/<str:pk>/', DeleteR.as_view(), name="eliminar"),
-    path('factura',factura.as_view(),name='factura'),
+    path('factura',factura1.as_view(),name='factura'),
+    path('producto',Lista2.as_view(),name='producto'),
+
     ]

@@ -29,11 +29,17 @@ class DeleteR(DeleteView):
     template_name = "eliminar.html"
     success_url = reverse_lazy("index")
 
-class factura (TemplateView):
-    model = factura
+class factura1 (CreateView):
+    model = Factura
     fields = ['usuario', 'producto', 'stock', 'precio', 'cantidad', 'totalapagar']
     template_name = "factura.html"
     success_url = reverse_lazy("index")
+
+class Lista2(ListView):
+    model = Factura
+    template_name = "producto.html"
+
+
 """""    
 def Menu(request):
     return render(request, 'index.html')

@@ -14,7 +14,7 @@ class Formulario(models.Model):
     class Meta:
         db_table='formulario'
 
-class factura(models.Model):
+class Factura (models.Model):
     usuario = models.CharField(max_length=20, primary_key=True)
     producto = models.CharField(max_length=40)
     stock = models.CharField(max_length=40)
@@ -23,3 +23,4 @@ class factura(models.Model):
     totalapagar = models.CharField(max_length=40)
     class Meta:
         db_table='factura'
+

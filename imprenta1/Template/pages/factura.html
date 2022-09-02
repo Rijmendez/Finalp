@@ -1,67 +1,55 @@
+{% extends "menu.html" %}
 {% load static %}
-<!DOCTYPE html>
-<html lang="en">
-   <head>
-      <title> Factura</title>
-	 	<link href="{% static 'css/factura.css' %} " rel="stylesheet">
+{% block title %} Factura {% endblock %}
+{% block secondNav %}
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+
+        <link href="{% static 'css/factura.css' %} " rel="stylesheet">
         <script src="{% static 'js/controlador1.js' %}"></script>
 
-	  <meta charset="UTF-8">
-   </head>
+        <meta charset="UTF-8">
+    </head>
     <body>
-      <header class="header">
-         <div class="logo-header">
-             <img src="{% static 'img/img.png' %}" alt="">
-         </div>
-
-	  <nav>
-
-
-
-
-
-
-
-
-
-
-
-	   </nav>
-       </header>
-	  <div class="container">
-	     <form id="contact">
-		   <h3>Factura</h3>
-           <fieldset>
-		     <input name="nombre1" placeholder="cliente" id="i1" name="nombre" class="nombre"
-			 type="text" tabindex="1" required autofocus>
-		   </fieldset>
-		   <fieldset>
-		     <input name="nombre1" placeholder="Producto" id="i2" name="nombre" class="nombre"
-			 type="text" tabindex="1" required autofocus>
-		   </fieldset>
-		   <fieldset>
-		     <input name="producto1" placeholder="Stock" id="i3" name="producto" class="producto"
-			 type="text" tabindex="2" required autofocus>
-		   </fieldset>
-           <fieldset>
-		     <input name="precio1" placeholder="Precio" id="i4" name="precio" class="precio"
-			 type="number" tabindex="3" onkeyup="calculo()" required autofocus step="any">
-		   </fieldset>
-		   <fieldset>
-		     <input name="cantidad1" placeholder="Cantidad" onkeyup="calculo()" id="i5" name="cantidad" class="cantidad"
-			 type="text" tabindex="4" required autofocus>
-		   </fieldset>
-		   <fieldset>
-		     <input name="total1" placeholder="Total a pagar" id="id"  name="total" class="total"
-			 type="number" tabindex="1" required autofocus>>
-		   </fieldset>
-			 <fieldset>
-				   <button type="submit" id="contact-submit"
-				   data-submit="...Sending">Submit</button>
-					<div align="center">
-                    </div>
-                 	</fieldset>
-         </form>
-	  </div>
-	</body>
-</html>
+    <div class="container">
+        <form method="POST" class="contact" id="contact">
+            {% csrf_token %}
+            <h3>Factura</h3>
+            <fieldset>
+                <input name="usuario" placeholder="usuario" id="i1" name="usuario" class="usuario" value="{{ object.usuario }}"
+                       type="text" tabindex="1" required autofocus>
+            </fieldset>
+            <fieldset>
+                <input name="producto" placeholder="producto" id="i2" name="producto" class="producto" value="{{ object.producto }}"
+                       type="text" tabindex="1" required autofocus>
+            </fieldset>
+            <fieldset>
+                <input name="stock" placeholder="Stock" id="i3" name="stock" class="stock"value="{{ object.stock }}"
+                       type="text" tabindex="2" required autofocus>
+            </fieldset>
+            <fieldset>
+                <input name="precio" placeholder="Precio" id="i4" name="precio" class="precio" value="{{ object.precio }}"
+                       type="number" tabindex="3" onkeyup="calculo()" required autofocus step="any">
+            </fieldset>
+            <fieldset>
+                <input name="cantidad" placeholder="Cantidad" onkeyup="calculo()" id="i5" name="cantidad" value="{{ object.cantidad }}"
+                       class="cantidad"
+                       type="text" tabindex="4" required autofocus>
+            </fieldset>
+            <fieldset>
+                <input name="total" placeholder="Total a pagar" id="id" name="total" class="total" value="{{ object.total }}"
+                       type="text" tabindex="7" required autofocus>>
+            </fieldset>
+            <fieldset>
+                <button type="submit" id="contact-submit"
+                        data-submit="...Sending">Submit
+                </button>
+                <div align="center">
+                </div>
+            </fieldset>
+        </form>
+    </div>
+    </body>
+    </html>
+{% endblock %}
