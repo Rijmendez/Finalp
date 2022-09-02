@@ -1,0 +1,65 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <title> Factura</title>
+	 	<link href="{% static 'css/factura.css' %} " rel="stylesheet">
+
+	  <meta charset="UTF-8">
+   </head>
+    <body>
+      <header class="header">
+         <div class="logo-header">
+             <img src="{% static 'img/img.png' %}" alt="">
+         </div>
+
+	  <nav>
+
+          <a href="{% url 'consulta' %}">Consulta</a>
+		  <a href="{% url 'producto' %}">Registro</a>
+          <a href="{% url 'Factura' %}">Factura</a>
+
+
+
+
+
+
+
+
+
+	   </nav>
+       </header>
+	  <div class="container">
+	     <form id="contact">
+		   <h3>Factura</h3>
+
+		   <fieldset>
+		     <input name="nombre1" placeholder="Producto" id="i1" name="nombre" class="nombre"
+			 type="text" tabindex="1" required autofocus>
+		   </fieldset>
+		   <fieldset>
+		     <input name="producto1" placeholder="Stock" id="i2" name="producto" class="producto"
+			 type="text" tabindex="2" required autofocus>
+		   </fieldset>
+           <fieldset>
+		     <input name="precio1" placeholder="Precio" id="i3" name="precio" class="precio"
+			 type="number" tabindex="3" onkeyup="calculo()" required autofocus step="any">
+		   </fieldset>
+		   <fieldset>
+		     <input name="cantidad1" placeholder="Cantidad" onkeyup="calculo()" id="i4" name="cantidad" class="cantidad"
+			 type="text" tabindex="4" required autofocus>
+		   </fieldset>
+		   <fieldset>
+		     <input name="total1" placeholder="Total a pagar" id="id"  name="total" class="total"
+			 type="number" tabindex="1" required autofocus>>
+		   </fieldset>
+			 <fieldset>
+				   <button type="submit" id="contact-submit"
+				   data-submit="...Sending">Submit</button>
+					<div align="center">
+                    </div>
+                 	</fieldset>
+         </form>
+	  </div>
+	</body>
+</html>

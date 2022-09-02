@@ -1,0 +1,25 @@
+{% load static %}
+<html lang="en">
+<head>
+    <title>{% block title %}{% endblock %}l</title>
+    <link href="{% static 'css/principal.css' %} " rel="stylesheet">
+    <meta charset="UTF-8">
+</head>
+<body>
+<header class="header">
+    <div class="logo-header">
+        <img src="{% static 'img/img.png' %}" alt="">
+    </div>
+
+    <nav>
+
+        <a href="{% url 'lista' %}">Consulta</a>
+        <a href="{% url 'formulario' %}">Registro</a>
+        <a href="{% url 'factura' %}">Factura</a>
+
+
+    </nav>
+</header>
+{% block secondNav %}{% endblock %}
+</body>
+</html>

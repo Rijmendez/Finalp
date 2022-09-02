@@ -13,21 +13,23 @@ class Index(TemplateView):
 class Formulario1(CreateView):
     model = Formulario
     fields = ['usuario', 'nombre', 'password','password2','correo','telefono']
-    template_name = "Facturacion.html"
+    template_name = "formulario.html"
     success_url = reverse_lazy("index")
 class ListaF(ListView):
     model = Formulario
-    template_name = "consulta.html"
+    template_name = "lista.html"
 
 class ModificarF(UpdateView):
     model = Formulario
     fields = [ 'nombre', 'password','password2','correo','telefono','usuario']
-    template_name = "consulta.html"
+    template_name = "factura.html"
     success_url = reverse_lazy("index")
 class DeleteR(DeleteView):
     model = Formulario
     template_name = "eliminar.html"
     success_url = reverse_lazy("index")
+
+class factura (TemplateView):
 """""    
 def Menu(request):
     return render(request, 'index.html')

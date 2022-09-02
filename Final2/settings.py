@@ -56,7 +56,7 @@ ROOT_URLCONF = 'Final2.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'imprenta1/Template/page')],  # ruta de paginas
+        'DIRS': [os.path.join(BASE_DIR, 'imprenta1/Template/pages')],  # ruta de paginas
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

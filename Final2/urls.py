@@ -22,6 +22,7 @@ urlpatterns = [
     path('',Index.as_view(),name='index'),
     path('formulario',Formulario1.as_view(),name='formulario'),
     path('lista',ListaF.as_view(),name='lista'),
-    path('consulta/<str:pk>/',ModificarF.as_view(),name="consulta"),
+    path('consultas/<str:pk>/',ModificarF.as_view(),name="consultas"),
     path('eliminar/<str:pk>/', DeleteR.as_view(), name="eliminar"),
+    path('factura/<str:pk>)',factura.as_view(), name="factura")
     ]
