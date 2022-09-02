@@ -39,6 +39,12 @@ class Lista2(ListView):
     model = Factura
     template_name = "producto.html"
 
+class Registropp(CreateView):
+    model = Registro
+    fields = ['ID', 'producto', 'cantidad','stock','precio']
+    template_name = "RegistroP.html"
+    success_url = reverse_lazy("index")
+
 
 """""    
 def Menu(request):

@@ -24,3 +24,13 @@ class Factura (models.Model):
     class Meta:
         db_table='factura'
 
+class Registro (models.Model):
+    ID = models.CharField(max_length=20, primary_key=True)
+    producto = models.CharField(max_length=40)
+    cantidad = models.CharField(max_length=40)
+    stock = models.CharField(max_length=40)
+    precio = models.CharField(max_length=40)
+    class Meta:
+        db_table='Registropp'
+
+

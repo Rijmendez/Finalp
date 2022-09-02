@@ -26,5 +26,6 @@ urlpatterns = [
     path('eliminar/<str:pk>/', DeleteR.as_view(), name="eliminar"),
     path('factura',factura1.as_view(),name='factura'),
     path('producto',Lista2.as_view(),name='producto'),
+    path('RegistropP',Registropp.as_view(),name='RegistroP'),
 
     ]
