@@ -1,6 +1,6 @@
 {% extends "menu.html" %}
 {% load static %}
-{% block title %} Lista {% endblock %}
+{% block title %} Producto {% endblock %}
 {% block secondNav %}
     <html>
     <head>
@@ -17,12 +17,11 @@
             <table>
                 <thead>
                 <tr>
-                    <th>usuario</th>
+                    <th>ID</th>
                     <th>producto</th>
+                    <th>cantidad</th>
                     <th>stock</th>
                     <th>precio</th>
-                    <th>cantidad</th>
-                    <th>total a pagar</th>
 
                 </tr>
                 </thead>
@@ -39,13 +38,14 @@
                 </tfoot>
 
                 <tbody>
-                {% for pro in object_list %}
+                {% for Reg in object_list %}
                     <tr>
-                        <td>{{ pro.ID }}</td>
-                        <td>{{ pro.producto }}</td>
-                        <td>{{ pro.stock }}</td>
-                        <td>{{ pro.cantidad }}</td>
-                        <td>{{ pro.precio }}</td>
+                        <td>{{ Reg.ID }}</td>
+                        <td>{{ Reg.producto }}</td>
+                        <td>{{ Reg.stock }}</td>
+                        <td>{{ Reg.cantidad }}</td>
+                        <td>{{ Reg.precio }}</td>
+
 
 
 
