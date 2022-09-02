@@ -4,7 +4,6 @@
    <head>
       <title> Factura</title>
 	 	<link href="{% static 'css/factura.css' %} " rel="stylesheet">
-        <script src="{% static 'js/controlador1.js' %}"></script>
 
 	  <meta charset="UTF-8">
    </head>
@@ -16,7 +15,9 @@
 
 	  <nav>
 
-
+          <a href="{% url 'consulta' %}">Consulta</a>
+		  <a href="{% url 'producto' %}">Registro</a>
+          <a href="{% url 'Factura' %}">Factura</a>
 
 
 
@@ -32,7 +33,7 @@
 	     <form id="contact">
 		   <h3>Factura</h3>
            <fieldset>
-		     <input name="nombre1" placeholder="cliente" id="i1" name="nombre" class="nombre"
+		     <input name="nombre1" placeholder="usuario" id="i1" name="nombre" class="nombre"
 			 type="text" tabindex="1" required autofocus>
 		   </fieldset>
 		   <fieldset>

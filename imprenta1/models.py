@@ -20,4 +20,6 @@ class factura(models.Model):
     stock = models.CharField(max_length=40)
     precio = models.CharField(max_length=40)
     cantidad = models.CharField(max_length=40)
-    total a pagar =
+    totalapagar = models.CharField(max_length=40)
+    class Meta:
+        db_table='factura'
