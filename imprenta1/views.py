@@ -36,7 +36,7 @@ class factura1 (CreateView):
     success_url = reverse_lazy("index")
 
 class Lista2(ListView):
-    model = Factura
+    model = Registro
     template_name = "producto.html"
 
 class Registropp(CreateView):

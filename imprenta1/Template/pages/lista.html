@@ -1,0 +1,74 @@
+{% extends "menu.html" %}
+{% load static %}
+{% block title %} Lista {% endblock %}
+{% block secondNav %}
+    <html>
+    <head>
+        <title>Tabla</title>
+        <link rel="stylesheet" type="text/css"
+              href="{% static 'css/estilonuevo.css' %}">
+
+    </head>
+    <body>
+
+    <form method="POST">
+        <div class="datagrid">
+
+            <table>
+                <thead>
+                <tr>
+                    <th>usuario</th>
+                    <th>nombre</th>
+                    <th>correo</th>
+                    <th>telefono</th>
+                    <th>M</th>
+                    <th>E</th>
+
+                </tr>
+                </thead>
+                <tfoot>
+                <tr>
+                    <td colspan="6">
+                        <div id="paging">
+                            <ul>
+                                <li><a href="#"><span>Eliminar</span></a></li>
+                                <li><a href="#"><span>modificar</span></a></li>
+                            </ul>
+                        </div>
+                </tr>
+                </tfoot>
+
+                <tbody>
+                {% for fact in object_list %}
+                    <tr>
+                        <td>{{ fact.usuario }}</td>
+                        <td>{{ fact.nombre }}</td>
+                        <td>{{ fact.correo }}</td>
+                        <td>{{ fact.telefono }}</td>
+                        <td><a href="{% url 'consultas' fact.usuario %}">Modificar</a></td>
+                        <td><a href="{% url 'eliminar' fact.usuario %}">Eliminar</a></td>
+
+
+
+                    </tr>
+
+
+
+                {% endfor %}
+
+                </tbody>
+            </table>
+        </div>
+
+
+    </form>
+    </tbody>
+    </table>
+
+    </div>
+
+
+    </body>
+    </html>
+
+{% endblock %}
